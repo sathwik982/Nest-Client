@@ -304,7 +304,7 @@ export default function PgList() {
 
       {/* RIGHT: MAP */}
       <div className="w-[52%] h-full rounded-3xl overflow-hidden shadow-xl border border-border bg-card">
-        <Mapbox locations={filtered} hovered={hovered} />
+        <Mapbox locations={filtered as any} hovered={hovered as any} />
       </div>
     </div>
   );
