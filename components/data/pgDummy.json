@@ -1,0 +1,316 @@
+[{
+  "_id": {
+    "$oid": "6937ccfcbfe832e6cac44360"
+  },
+  "name": "Nest Elite Boys PG",
+  "description": "Premium boys PG with modern amenities.",
+  "gender": "boys",
+  "propertyType": "pg",
+  "location": {
+    "city": "Bangalore",
+    "area": "HSR Layout",
+    "address": "17th Cross Road, Sector 2",
+    "latitude": 12.9145,
+    "longitude": 77.6402
+  },
+  "roomTypes": [
+    {
+      "type": "single",
+      "pricePerMonth": 15000,
+      "capacity": 1,
+      "availableRooms": 3,
+      "_id": {
+        "$oid": "6937ccfcbfe832e6cac44361"
+      }
+    },
+    {
+      "type": "double",
+      "pricePerMonth": 11000,
+      "capacity": 2,
+      "availableRooms": 5,
+      "_id": {
+        "$oid": "6937ccfcbfe832e6cac44362"
+      }
+    }
+  ],
+  "amenities": [
+    {
+      "$oid": "6937bc1ea90cf9339838dd61"
+    },
+    {
+      "$oid": "6937be16a90cf9339838dd74"
+    },
+    {
+      "$oid": "6937be2fa90cf9339838dd77"
+    }
+  ],
+  "services": [
+    {
+      "$oid": "6937c0fb06bebedea59b2964"
+    },
+    {
+      "$oid": "6937c10506bebedea59b2967"
+    },
+    {
+      "$oid": "6937c11b06bebedea59b296a"
+    },
+    {
+      "$oid": "6937c12206bebedea59b296d"
+    },
+    {
+      "$oid": "6937c15d06bebedea59b2973"
+    }
+  ],
+  "images": [
+    "https://4.bp.blogspot.com/-uKwJgTukB9A/XKe119O9OxI/AAAAAAAAIR8/kB1pbUh0F4wnmfEuVU3uioAkQwNmMgY4gCLcBGAs/s1600/Paying%2BGuest%2Bin%2BBengaluru%2B%252814%2529.jpeg",
+    "https://wakeuphostels.in/wp-content/uploads/elementor/thumbs/ladies-pg-jayanagar-9th-block-near-metro-station-pcgrwhf63t6wr765lewnocz59zoctcfjg8b2omxb20.jpeg"
+  ],
+  "videos": [
+    "https://example.com/pg1.mp4"
+  ],
+  "status": "available",
+  "createdAt": {
+    "$date": "2025-12-09T07:17:16.331Z"
+  },
+  "updatedAt": {
+    "$date": "2025-12-09T07:17:16.331Z"
+  },
+  "__v": 0
+},
+  {
+    "_id": {
+      "$oid": "6937cd27bfe832e6cac44364"
+    },
+    "name": "Urban Stay Girls PG",
+    "description": "Safe and comfortable girls PG with food and laundry.",
+    "gender": "girls",
+    "propertyType": "pg",
+    "location": {
+      "city": "Bangalore",
+      "area": "Koramangala",
+      "address": "4th Block, Near Sony Signal",
+      "latitude": 12.9352,
+      "longitude": 77.6245
+    },
+    "roomTypes": [
+      {
+        "type": "double",
+        "pricePerMonth": 12000,
+        "capacity": 2,
+        "availableRooms": 4,
+        "_id": {
+          "$oid": "6937cd27bfe832e6cac44365"
+        }
+      },
+      {
+        "type": "triple",
+        "pricePerMonth": 9000,
+        "capacity": 3,
+        "availableRooms": 6,
+        "_id": {
+          "$oid": "6937cd27bfe832e6cac44366"
+        }
+      }
+    ],
+    "amenities": [
+      {
+        "$oid": "6937bc1ea90cf9339838dd61"
+      },
+      {
+        "$oid": "6937be16a90cf9339838dd74"
+      },
+      {
+        "$oid": "6937be2fa90cf9339838dd77"
+      }
+    ],
+    "services": [
+      {
+        "$oid": "6937c0fb06bebedea59b2964"
+      },
+      {
+        "$oid": "6937c10506bebedea59b2967"
+      },
+      {
+        "$oid": "6937c11b06bebedea59b296a"
+      },
+      {
+        "$oid": "6937c12206bebedea59b296d"
+      },
+      {
+        "$oid": "6937c15d06bebedea59b2973"
+      }
+    ],
+    "images": [
+      "https://4.bp.blogspot.com/-uKwJgTukB9A/XKe119O9OxI/AAAAAAAAIR8/kB1pbUh0F4wnmfEuVU3uioAkQwNmMgY4gCLcBGAs/s1600/Paying%2BGuest%2Bin%2BBengaluru%2B%252814%2529.jpeg",
+      "https://wakeuphostels.in/wp-content/uploads/elementor/thumbs/ladies-pg-jayanagar-9th-block-near-metro-station-pcgrwhf63t6wr765lewnocz59zoctcfjg8b2omxb20.jpeg"
+    ],
+    "videos": [
+      "https://example.com/pg1.mp4"
+    ],
+    "status": "available",
+    "createdAt": {
+      "$date": "2025-12-09T07:17:59.169Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-09T07:17:59.169Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6937cd46bfe832e6cac44368"
+    },
+    "name": "TechNest Unisex PG",
+    "description": "Budget-friendly PG for IT professionals.",
+    "gender": "unisex",
+    "propertyType": "pg",
+    "location": {
+      "city": "Bangalore",
+      "area": "Electronic City Phase 1",
+      "address": "Near Infosys Gate 6",
+      "latitude": 12.849,
+      "longitude": 77.6636
+    },
+    "roomTypes": [
+      {
+        "type": "single",
+        "pricePerMonth": 13000,
+        "capacity": 1,
+        "availableRooms": 2,
+        "_id": {
+          "$oid": "6937cd46bfe832e6cac44369"
+        }
+      },
+      {
+        "type": "triple",
+        "pricePerMonth": 8500,
+        "capacity": 3,
+        "availableRooms": 7,
+        "_id": {
+          "$oid": "6937cd46bfe832e6cac4436a"
+        }
+      }
+    ],
+    "amenities": [
+      {
+        "$oid": "6937bc1ea90cf9339838dd61"
+      },
+      {
+        "$oid": "6937be16a90cf9339838dd74"
+      },
+      {
+        "$oid": "6937be2fa90cf9339838dd77"
+      }
+    ],
+    "services": [
+      {
+        "$oid": "6937c0fb06bebedea59b2964"
+      },
+      {
+        "$oid": "6937c10506bebedea59b2967"
+      },
+      {
+        "$oid": "6937c11b06bebedea59b296a"
+      },
+      {
+        "$oid": "6937c12206bebedea59b296d"
+      },
+      {
+        "$oid": "6937c15d06bebedea59b2973"
+      }
+    ],
+    "images": [
+      "https://4.bp.blogspot.com/-uKwJgTukB9A/XKe119O9OxI/AAAAAAAAIR8/kB1pbUh0F4wnmfEuVU3uioAkQwNmMgY4gCLcBGAs/s1600/Paying%2BGuest%2Bin%2BBengaluru%2B%252814%2529.jpeg",
+      "https://wakeuphostels.in/wp-content/uploads/elementor/thumbs/ladies-pg-jayanagar-9th-block-near-metro-station-pcgrwhf63t6wr765lewnocz59zoctcfjg8b2omxb20.jpeg"
+    ],
+    "videos": [
+      "https://example.com/pg1.mp4"
+    ],
+    "status": "available",
+    "createdAt": {
+      "$date": "2025-12-09T07:18:30.048Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-09T07:18:30.048Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "6937cd68bfe832e6cac4436c"
+    },
+    "name": "Prime Living Boys PG",
+    "description": "Spacious rooms with AC, WiFi, and housekeeping.",
+    "gender": "boys",
+    "propertyType": "pg",
+    "location": {
+      "city": "Bangalore",
+      "area": "Whitefield",
+      "address": "ITPL Road, Near Forum Mall",
+      "latitude": 12.9698,
+      "longitude": 77.7499
+    },
+    "roomTypes": [
+      {
+        "type": "single",
+        "pricePerMonth": 16000,
+        "capacity": 1,
+        "availableRooms": 1,
+        "_id": {
+          "$oid": "6937cd68bfe832e6cac4436d"
+        }
+      },
+      {
+        "type": "double",
+        "pricePerMonth": 11500,
+        "capacity": 2,
+        "availableRooms": 3,
+        "_id": {
+          "$oid": "6937cd68bfe832e6cac4436e"
+        }
+      }
+    ],
+    "amenities": [
+      {
+        "$oid": "6937bc1ea90cf9339838dd61"
+      },
+      {
+        "$oid": "6937be16a90cf9339838dd74"
+      },
+      {
+        "$oid": "6937be2fa90cf9339838dd77"
+      }
+    ],
+    "services": [
+      {
+        "$oid": "6937c0fb06bebedea59b2964"
+      },
+      {
+        "$oid": "6937c10506bebedea59b2967"
+      },
+      {
+        "$oid": "6937c11b06bebedea59b296a"
+      },
+      {
+        "$oid": "6937c12206bebedea59b296d"
+      },
+      {
+        "$oid": "6937c15d06bebedea59b2973"
+      }
+    ],
+    "images": [
+      "https://4.bp.blogspot.com/-uKwJgTukB9A/XKe119O9OxI/AAAAAAAAIR8/kB1pbUh0F4wnmfEuVU3uioAkQwNmMgY4gCLcBGAs/s1600/Paying%2BGuest%2Bin%2BBengaluru%2B%252814%2529.jpeg",
+      "https://wakeuphostels.in/wp-content/uploads/elementor/thumbs/ladies-pg-jayanagar-9th-block-near-metro-station-pcgrwhf63t6wr765lewnocz59zoctcfjg8b2omxb20.jpeg"
+    ],
+    "videos": [
+      "https://example.com/pg1.mp4"
+    ],
+    "status": "available",
+    "createdAt": {
+      "$date": "2025-12-09T07:19:04.991Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-09T07:19:04.991Z"
+    },
+    "__v": 0
+  }]

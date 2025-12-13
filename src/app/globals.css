@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* LIGHT MODE - Based on PDF Brand Guidelines */
+    --background: 255 255 255;
+    --foreground: 29 30 29;
+
+    /* Brand Gold from PDF: #8E744B (RGB: 142, 116, 75) */
+    --brand-gold: 142 116 75;
+    --brand-gold-dark: 109 89 55;
+    --brand-gold-light: 160 138 100;
+
+    /* Light mode specific colors */
+    --card: 250 250 250;
+    --card-foreground: 29 30 29;
+
+    --secondary: 245 245 245;
+    --secondary-foreground: 29 30 29;
+
+    --muted: 229 229 229;
+    --muted-foreground: 115 115 115;
+
+    --accent: 245 245 245;
+    --accent-foreground: 29 30 29;
+
+    --border: 229 229 229;
+    --input: 229 229 229;
+    --ring: 142 116 75;
+  }
+
+  .dark {
+    /* DARK MODE */
+    --background: 29 30 29;
+    --foreground: 245 245 245;
+
+    --brand-gold: 142 116 75;
+    --brand-gold-dark: 109 89 55;
+    --brand-gold-light: 160 138 100;
+
+    --card: 42 43 42;
+    --card-foreground: 245 245 245;
+
+    --secondary: 54 56 54;
+    --secondary-foreground: 245 245 245;
+
+    --muted: 54 56 54;
+    --muted-foreground: 163 163 163;
+
+    --accent: 54 56 54;
+    --accent-foreground: 245 245 245;
+
+    --border: 74 75 74;
+    --input: 54 56 54;
+    --ring: 142 116 75;
+  }
+
+  body {
+    background: rgb(var(--background));
+    color: rgb(var(--foreground));
+    transition: background-color 0.3s, color 0.3s;
+  }
+}
