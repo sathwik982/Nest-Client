@@ -4,10 +4,6 @@ import { useEffect, useState } from "react";
 import PgList, { Property } from "@/components/pglist";
 import PropertyFilters from "@/components/PropertyFilters";
 
-/* =======================
-   FILTER TYPE
-======================= */
-
 interface Filters {
   city?: string;
   area?: string;
@@ -26,9 +22,6 @@ export default function ListingPage() {
   const API_URL =
     process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000";
 
-  /* =======================
-     FETCH WITH FILTERS
-  ======================= */
   useEffect(() => {
     const fetchProperties = async () => {
       try {
@@ -58,8 +51,6 @@ export default function ListingPage() {
 
     fetchProperties();
   }, [filters, API_URL]);
-
-  
 
   return (
     <div className="">

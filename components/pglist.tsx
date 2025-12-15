@@ -15,14 +15,11 @@ import {
 } from "lucide-react";
 import ContactModal from "@/components/Contact";
 
-/* =======================
-   TYPES
-======================= */
-
 interface RoomType {
   _id: string;
   type: string;
   pricePerMonth: number;
+  capacity: string;
 }
 
 interface Amenity {
@@ -75,6 +72,7 @@ export default function PgList({
   if (loading) return <div className="p-10">Loading…</div>;
   if (error) return <div className="p-10 text-red-500">{error}</div>;
 
+
   return (
     <div className="flex w-full h-[calc(100vh-80px)] bg-background">
       {/* LIST */}
@@ -102,7 +100,7 @@ export default function PgList({
                 className="group bg-card border rounded-2xl overflow-hidden cursor-pointer"
               >
                 <div className="flex">
-                  <div className="relative w-1/3 h-64">
+                  <div className="relative w-1/3 h-58">
                     <Image
                       src={`${API_URL}${pg.images?.[0]}`}
                       alt={pg.name}
@@ -125,7 +123,19 @@ export default function PgList({
                       {pg.location.city}
                     </div>
 
-                    
+                    {pg?.roomTypes?.length > 0 && (
+                      <div className="flex gap-4 mt-3 text-sm text-gray-600">
+                        {pg.roomTypes.map((room) => (
+                          <div key={room._id} className="flex items-center gap-2">
+                            <Bed className="w-4 h-4 text-teal-500" />
+                            <span className="capitalize">{room.type}</span>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+
+
+
 
 
                     <div className="flex justify-between items-center pt-4 border-t mt-4">
@@ -179,7 +189,7 @@ export default function PgList({
         <Mapbox locations={properties as any} hovered={hovered as any} />
       </div>
 
-    
+
       <ContactModal
         open={modalType !== null}
         type={modalType as any}
