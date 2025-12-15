@@ -169,8 +169,8 @@ export default function PropertyFilters({
               className={`w-full px-3 py-2 rounded-lg text-left text-sm
                 ${
                   filters.gender === g
-                    ? "bg-brand/10 text-brand"
-                    : "hover:bg-accent"
+                    ? "bg-brand/10 text-black"
+                    : "hover:bg-accent text-black"
                 }`}
             >
               {g.charAt(0).toUpperCase() + g.slice(1)}
@@ -181,7 +181,7 @@ export default function PropertyFilters({
               update("gender", "");
               setOpen(null);
             }}
-            className="mt-2 w-full px-3 py-2 text-sm text-muted-foreground hover:bg-accent rounded-lg text-left"
+            className="mt-2 w-full px-3 py-2 text-sm text-muted-foreground hover:bg-accent rounded-lg text-left text-black"
           >
             Clear
           </button>
@@ -206,7 +206,7 @@ export default function PropertyFilters({
                 update("roomType", r);
                 setOpen(null);
               }}
-              className={`w-full px-3 py-2 rounded-lg text-left text-sm
+              className={`w-full px-3 py-2 rounded-lg text-left text-sm text-black
                 ${
                   filters.roomType === r
                     ? "bg-brand/10 text-brand"
@@ -221,7 +221,7 @@ export default function PropertyFilters({
               update("roomType", "");
               setOpen(null);
             }}
-            className="mt-2 w-full px-3 py-2 text-sm text-muted-foreground hover:bg-accent rounded-lg text-left"
+            className="mt-2 w-full px-3 py-2 text-sm text-muted-foreground hover:bg-accent rounded-lg text-left text-black"
           >
             Clear
           </button>
@@ -246,20 +246,20 @@ export default function PropertyFilters({
               placeholder="Min price"
               value={filters.minPrice}
               onChange={(e) => update("minPrice", e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-lg"
+              className="w-full px-3 py-2 border border-input rounded-lg text-black"
             />
             <input
               type="number"
               placeholder="Max price"
               value={filters.maxPrice}
               onChange={(e) => update("maxPrice", e.target.value)}
-              className="w-full px-3 py-2 border border-input rounded-lg"
+              className="w-full px-3 py-2 border border-input rounded-lg text-black"
             />
 
             <div className="flex gap-2 pt-2">
               <button
                 onClick={() => setOpen(null)}
-                className="flex-1 px-3 py-2 bg-brand text-white rounded-lg"
+                className="flex-1 px-3 py-2 bg-brand text-white rounded-lg bg-black"
               >
                 Apply
               </button>
@@ -269,7 +269,7 @@ export default function PropertyFilters({
                   update("maxPrice", "");
                   setOpen(null);
                 }}
-                className="flex-1 px-3 py-2 bg-accent rounded-lg"
+                className="flex-1 px-3 py-2 bg-accent rounded-lg bg-black"
               >
                 Clear
               </button>
@@ -290,7 +290,7 @@ export default function PropertyFilters({
           </div>
 
           {/* SORT */}
-          <select className="hidden md:block px-3 py-2 border border-border rounded-full text-sm bg-background">
+          <select className="hidden md:block px-3 py-2 border border-border rounded-full text-sm  bg-background">
             <option value="">Sort by</option>
             <option value="price-asc">Price: Low → High</option>
             <option value="price-desc">Price: High → Low</option>

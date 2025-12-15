@@ -62,8 +62,8 @@ export default function ContactModal({
   };
 
   return createPortal(
-    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/50">
-      <div className="relative w-full max-w-md bg-white rounded-xl p-6 shadow-2xl">
+    <div className="fixed inset-0 z-[9999] flex items-center justify-center bg-light-bg dark:bg-dark-bg ">
+      <div className="relative w-full max-w-md bg-white rounded-xl p-6 shadow-2xl text-black">
         <button
           onClick={onClose}
           className="absolute top-3 right-3 text-muted-foreground"
@@ -71,7 +71,7 @@ export default function ContactModal({
           <X />
         </button>
 
-        <h3 className="text-lg font-semibold mb-4">
+        <h3 className="text-lg font-semibold mb-4 text-black">
           {type === "call" ? "Request Callback" : "Schedule Visit"}
         </h3>
 
@@ -80,14 +80,14 @@ export default function ContactModal({
             placeholder="Your Name"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full border px-3 py-2 rounded-lg"
+            className="w-full border px-3 py-2 rounded-lg text-black"
           />
 
           <input
             placeholder="Phone Number"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
-            className="w-full border px-3 py-2 rounded-lg"
+            className="w-full border px-3 py-2 rounded-lg text-black"
           />
 
 
