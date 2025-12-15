@@ -52,7 +52,7 @@ export default function HeroSection() {
           <ImageCard
             title="PG's for Student Living"
             desc="New-age PG's with all amenities and a vibrant community."
-            img="/student.avif"
+            img="/Student.avif"
           />
 
           <ImageCard
