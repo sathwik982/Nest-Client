@@ -437,12 +437,7 @@ export default function PgDetailsPage() {
         </div>
 
         {/* Price Section */}
-        <div className="mt-8">
-          <p className="text-gray-600 text-sm mb-1">Starts from</p>
-          <p className="text-4xl font-bold text-gray-900">
-            ₹{pg.startingPrice.toLocaleString("en-IN")}/mo*
-          </p>
-        </div>
+
       </div>
 
       {/* Sticky Tabs */}
