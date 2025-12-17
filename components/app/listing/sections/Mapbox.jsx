@@ -118,7 +118,7 @@ export default function Mapbox({ locations = [], hovered = null }) {
 
       {/* INFO CARD */}
       {hovered && (
-        <div className="pointer-events-none absolute z-[500] left-1/2 top-10 -translate-x-1/2">
+        <div className="pointer-events-none absolute z-500 left-1/2 top-10 -translate-x-1/2">
           <div className="relative">
             <div className="bg-white rounded-2xl shadow-[0_15px_40px_rgba(0,0,0,0.18)] px-4 py-3 flex items-center gap-3 min-w-[260px]">
 

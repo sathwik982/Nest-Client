@@ -76,3 +76,12 @@
   box-shadow: 0 0 0 2px rgb(var(--ring));
 }
 
+/* hide scrollbar but keep scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE */
+  scrollbar-width: none; /* Firefox */
+}
+

@@ -20,7 +20,7 @@ export default function ImageCard({ title, desc, img }: ImageCardProps) {
   return (
     <div
       onClick={handleClick}
-      className="relative w-full h-[180px] lg:h-[200px] rounded-2xl overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02]"
+      className="relative w-full h-[180px] lg:h-[180px] rounded-2xl overflow-hidden cursor-pointer group transition-transform hover:scale-[1.02]"
     >
       {/* Background Image */}
       <Image
@@ -31,7 +31,7 @@ export default function ImageCard({ title, desc, img }: ImageCardProps) {
       />
 
       {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+      <div className="absolute inset-0 bg-linera-to-t from-black/80 via-black/40 to-transparent" />
 
       {/* Text Content */}
       <div className="absolute bottom-0 left-0 right-0 p-4 text-white">

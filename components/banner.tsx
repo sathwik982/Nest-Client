@@ -69,18 +69,17 @@ export default function BannerSlider() {
   };
 
   return (
-    <div className="relative w-full h-[420px] md:h-[500px] rounded-2xl overflow-hidden shadow-xl bg-card">
+    <div className="relative w-full h-[500px] md:h-[500px] lg:h-[590px] rounded-2xl overflow-hidden shadow-2xl shadow-black bg-card">
       {slides.map((slide, i) => (
         <div
           key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${
-            current === i ? "opacity-100" : "opacity-0"
-          }`}
+          className={`absolute inset-0 transition-opacity duration-700 ${current === i ? "opacity-100" : "opacity-0"
+            }`}
         >
-          <div className="flex h-full">
+          <div className="flex h-full  ">
             {/* LEFT TEXT */}
             <div className="w-[40%] flex flex-col justify-center px-6 md:px-10 z-10">
-              <h1 className="text-foreground w-[190%] font-bold text-2xl md:text-4xl lg:text-5xl leading-tight">
+              <h1 className="text-foreground w-[190%] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
                 {slide.title}
               </h1>
 
@@ -101,17 +100,19 @@ export default function BannerSlider() {
           </div>
 
           {/* DARK GRADIENT OVERLAY */}
-          <div className="absolute inset-0 bg-gradient-to-r from-card/80 via-card/40 to-transparent" />
+          <div className="absolute inset-0 bg-linear-to-r from-card/80 via-card/40 to-transparent" />
         </div>
       ))}
 
       {/* SEARCH BAR */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 bg-secondary/95 backdrop-blur-sm p-3 md:p-3 w-[92%] md:w-[580px] rounded-xl shadow-2xl border border-border">
-        <div className="flex items-center justify-between rounded-xl px-4 gap-3">
-          <div className="flex flex-col">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 backdrop-blur-sm p-3 w-[95%] sm:w-[92%] md:w-[580px] rounded-xl shadow-2xl border border-border bg-background">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 px-3 md:px-4">
+
+          {/* LEFT TEXT */}
+          <div className="flex flex-col text-center md:text-left">
             <p className="text-xs text-brand-gold">Find in and around...</p>
 
-            <div className="flex items-center gap-1 text-sm md:text-base text-foreground mt-1">
+            <div className="flex items-center justify-center md:justify-start gap-1 text-sm md:text-base text-foreground mt-1">
               <span className="font-medium">Search</span>
               <button
                 type="button"
@@ -123,7 +124,8 @@ export default function BannerSlider() {
             </div>
           </div>
 
-          <div className="flex-1 flex items-center justify-end">
+          {/* SEARCH INPUT */}
+          <div className="w-full md:flex-1 flex justify-center md:justify-end">
             <div className="flex items-center bg-input border border-border rounded-full overflow-hidden shadow-sm w-full md:w-[380px]">
               <input
                 ref={inputRef}
@@ -137,7 +139,7 @@ export default function BannerSlider() {
 
               <button
                 type="button"
-                className="px-2 md:px-3 h-full flex items-center justify-center border-l border-border hover:bg-muted transition"
+                className="px-3 h-full flex items-center justify-center border-l border-border hover:bg-muted transition"
               >
                 <TbCurrentLocation className="text-lg md:text-xl text-muted-foreground" />
               </button>
@@ -151,8 +153,10 @@ export default function BannerSlider() {
               </button>
             </div>
           </div>
+
         </div>
       </div>
+
 
       {/* DOTS */}
       <div className="absolute bottom-4 w-full flex justify-center gap-3">
@@ -160,9 +164,8 @@ export default function BannerSlider() {
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-2.5 w-2.5 rounded-full cursor-pointer transition-all ${
-              current === i ? "bg-brand-gold scale-125" : "bg-muted"
-            }`}
+            className={`h-2.5 w-2.5 rounded-full cursor-pointer transition-all ${current === i ? "bg-brand-gold scale-125" : "bg-muted"
+              }`}
           />
         ))}
       </div>

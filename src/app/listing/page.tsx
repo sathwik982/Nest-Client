@@ -56,7 +56,7 @@ export default function ListingPage() {
     <div className="">
       <PropertyFilters onChange={setFilters} />
 
-      <div className="mx-2 md:mx-26 lg:mx-48">
+      <div className="mx-2 md:mx-12 lg:mx-24 xl:mx-32">
         <PgList
           properties={properties}
           loading={loading}

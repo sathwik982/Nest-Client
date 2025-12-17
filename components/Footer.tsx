@@ -17,37 +17,41 @@ const column4 = ["Privacy Policy"];
 
 export default function Footer() {
   return (
-    <footer className="relative bg-secondary text-foreground border-t border-border transition-colors duration-300">
-      {/* TOP ROW */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-0 py-10 flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-        {/* LOGO */}
-        <div className="flex-shrink-0 flex items-start gap-3">
-          <div className="h-16 w-16 relative">
+    <footer className="relative bg-secondary text-foreground border-t border-border">
+      {/* TOP SECTION */}
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 grid gap-10 lg:grid-cols-[auto_1fr_auto] items-start">
+
+        {/* BRAND */}
+        <div className="flex items-start gap-4">
+          <div className="relative h-14 w-14">
             <Image
               src="/logobg.png"
-              alt="Nest logo"
+              alt="Nest Living logo"
               fill
               className="object-contain"
             />
           </div>
+
           <div className="hidden sm:block">
-            <p className="text-lg font-semibold tracking-wide">Nest Living</p>
-            <p className="text-xs text-muted-foreground mt-1">
+            <p className="text-lg font-semibold tracking-wide">
+              Nest Living
+            </p>
+            <p className="text-xs text-muted-foreground mt-1 max-w-[180px]">
               A smarter way to feel at home.
             </p>
           </div>
         </div>
 
-        {/* LINK COLUMNS */}
-        <div className="flex-1 grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm">
+        {/* LINKS */}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-sm justify-items-start">
           <FooterColumn items={column1} />
           <FooterColumn items={column2} />
           <FooterColumn items={column3} />
           <FooterColumn items={column4} />
         </div>
 
-        {/* SOCIAL ICONS */}
-        <div className="flex gap-4 justify-start lg:justify-end text-xl mt-2">
+        {/* SOCIALS */}
+        <div className="flex gap-4 justify-start lg:justify-end">
           <SocialIcon href="#" ariaLabel="Facebook">
             <FaFacebookF />
           </SocialIcon>
@@ -63,25 +67,32 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* DIVIDER */}
+      <div className="border-t border-border" />
+
       {/* BOTTOM BAR */}
-      <div className="max-w-6xl mx-auto px-6 md:px-10 lg:px-0 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-[11px] text-muted-foreground border-t border-border">
-        <p>
-          Copyright © {new Date().getFullYear()} | All Rights Reserved by Nest
-          Living.
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex flex-col md:flex-row items-center justify-between gap-2 text-[11px] text-muted-foreground">
+        <p className="text-center md:text-left">
+          © {new Date().getFullYear()} Nest Living. All rights reserved.
         </p>
-        <p className="text-[10px] md:text-[11px] text-center md:text-right">
-          Images shown are for representational purposes only. Amenities
-          depicted may vary across properties.
+
+        <p className="text-center md:text-right max-w-[420px] leading-relaxed">
+          Images shown are for representational purposes only. Amenities may vary
+          across properties.
         </p>
       </div>
 
-      {/* FLOATING WHATSAPP BUTTON */}
-      <button
-        className="fixed bottom-6 right-6 md:bottom-10 md:right-10 h-14 w-14 rounded-full bg-[#25D366] flex items-center justify-center shadow-[0_0_15px_2px_rgba(37,211,102,0.7)] hover:scale-110 transition-transform z-50"
+      {/* WHATSAPP FLOAT */}
+      <a
+        href="https://wa.me/919876543210?text=Hi%20I%20would%20like%20to%20know%20more"
+        target="_blank"
+        rel="noopener noreferrer"
+        title="Chat with us on WhatsApp"
         aria-label="Chat on WhatsApp"
+        className="fixed bottom-6 right-6 md:bottom-10 md:right-10 w-12 h-12 rounded-full bg-[#25D366] flex items-center justify-center shadow-xl hover:scale-110 transition-transform z-50"
       >
         <FaWhatsapp className="text-2xl text-white" />
-      </button>
+      </a>
     </footer>
   );
 }
@@ -93,7 +104,7 @@ function FooterColumn({ items }: { items: string[] }) {
         <Link
           key={item}
           href="#"
-          className="block hover:text-brand-gold transition-colors"
+          className="block text-muted-foreground hover:text-brand-gold transition-colors"
         >
           {item}
         </Link>
@@ -115,7 +126,7 @@ function SocialIcon({
     <Link
       href={href}
       aria-label={ariaLabel}
-      className="h-9 w-9 rounded-full border border-border flex items-center justify-center hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all"
+      className="h-9 w-9 rounded-full border border-border flex items-center justify-center text-muted-foreground hover:bg-brand-gold hover:text-white hover:border-brand-gold transition-all"
     >
       {children}
     </Link>
