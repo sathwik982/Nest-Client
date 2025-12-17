@@ -139,7 +139,7 @@ export default function BannerSlider() {
 
               <button
                 type="button"
-                className="px-3 h-full flex items-center justify-center border-l border-border hover:bg-muted transition"
+                className="px-1.5 h-full flex items-center justify-center border-l border-border hover:bg-muted transition"
               >
                 <TbCurrentLocation className="text-lg md:text-xl text-muted-foreground" />
               </button>
@@ -147,7 +147,7 @@ export default function BannerSlider() {
               <button
                 type="button"
                 onClick={handleSearch}
-                className="px-4 md:px-5 py-2 bg-brand-gold text-white text-sm md:text-base font-medium h-full hover:bg-brand-gold-dark transition rounded-r-full"
+                className="px-2 md:px-5 py-2 bg-brand-gold text-white text-sm md:text-base font-medium h-full hover:bg-brand-gold-dark transition rounded-r-full"
               >
                 Search
               </button>
