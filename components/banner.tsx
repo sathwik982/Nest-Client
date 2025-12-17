@@ -134,7 +134,7 @@ export default function BannerSlider() {
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
                 placeholder="Enter area, college, office..."
-                className="px-4 py-2 text-sm md:text-base outline-none flex-1 bg-transparent"
+                className="px-4 py-2 text-sm md:text-base outline-none flex-1 bg-transparent text-muted-foreground"
               />
 
               <button
