@@ -52,19 +52,19 @@ export default function HeroSection() {
           <ImageCard
             title="PG's for Student Living"
             desc="New-age PG's with all amenities and a vibrant community."
-            img="/Student.avif"
+            img="/card1.jpg"
           />
 
           <ImageCard
             title="PG's for Professionals"
             desc="Hotel-style stays designed to be close to your office."
-            img="/work.avif"
+            img="/card2.jpeg"
           />
 
           <ImageCard
             title="Luxurious PG's"
             desc="Fully furnished Luxurious with all essentials taken care of."
-            img="/Apartments.avif"
+            img="/card3.jpeg"
           />
         </div>
       </main>
@@ -110,7 +110,7 @@ export default function HeroSection() {
               {/* Tall building image */}
               <div className="col-span-1 row-span-2 rounded-3xl overflow-hidden">
                 <Image
-                  src="/building.avif"
+                  src="/h1.jpeg"
                   alt="Residence building"
                   width={450}
                   height={520}
@@ -121,7 +121,7 @@ export default function HeroSection() {
               {/* Top-right image */}
               <div className="rounded-3xl overflow-hidden">
                 <Image
-                  src="/Area.avif"
+                  src="/kitechn.jpg"
                   alt="Common area"
                   width={260}
                   height={240}
@@ -132,7 +132,7 @@ export default function HeroSection() {
               {/* Bottom-right image */}
               <div className="rounded-3xl overflow-hidden">
                 <Image
-                  src="/Corridor.avif"
+                  src="/h2.jpeg"
                   alt="Corridor and common space"
                   width={260}
                   height={240}

@@ -9,25 +9,25 @@ export default function BannerSlider() {
   const slides = [
     {
       id: 1,
-      image: "/banner1.avif",
+      image: "/img1.jpeg",
       title: "Come, live the new kind of living.",
       subtitle: "Professionally managed spaces that feel like home.",
     },
     {
       id: 2,
-      image: "/banner2.avif",
+      image: "/img2.jpeg",
       title: "Zero brokerage. Zero hassle.",
       subtitle: "Move in without paying a fortune upfront.",
     },
     {
       id: 3,
-      image: "/banner3.avif",
+      image: "/img3.jpeg",
       title: "Stay your way.",
       subtitle: "Co-ed, girls-only or boys-only – the choice is yours.",
     },
     {
       id: 4,
-      image: "/banner4.avif",
+      image: "/img4.jpeg",
       title: "Closer to what matters.",
       subtitle: "Live near your college or workplace and save time.",
     },
@@ -89,7 +89,7 @@ export default function BannerSlider() {
             </div>
 
             {/* RIGHT IMAGE */}
-            <div className="relative w-[60%] h-full">
+            <div className="relative w-[60%] h-[120%] lg:h-[112%]">
               <Image
                 src={slide.image}
                 alt="banner"

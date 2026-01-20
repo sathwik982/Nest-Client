@@ -17,7 +17,7 @@ export function KnowMore() {
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>Know More</NavigationMenuTrigger>
-          <NavigationMenuContent className="bg-[#1d1e1d]">
+          <NavigationMenuContent className="bg-background">
             <ul className="grid gap-3 p-4 w-[115px] md:w[150px]">
               <ListItem title="About Us" href="/about">
                 About us.

@@ -34,7 +34,7 @@ export default function HomeSection() {
               {/* Tall first image */}
               <div className="col-span-1 row-span-2 rounded-3xl overflow-hidden">
                 <Image
-                  src="/home_page_bed_1.avif"
+                  src="/room1.jpeg"
                   alt="Residence exterior"
                   width={480}
                   height={520}
@@ -45,7 +45,7 @@ export default function HomeSection() {
               {/* Top-right image */}
               <div className="rounded-3xl overflow-hidden">
                 <Image
-                  src="/home_page_bed_3.avif"
+                  src="/room2.jpeg"
                   alt="Corridor and common space"
                   width={260}
                   height={240}
@@ -56,7 +56,7 @@ export default function HomeSection() {
               {/* Bottom-right image */}
               <div className="rounded-3xl overflow-hidden">
                 <Image
-                  src="/home_page_bed_2.avif"
+                  src="/room3.jpeg"
                   alt="Seating and lounge area"
                   width={260}
                   height={240}
