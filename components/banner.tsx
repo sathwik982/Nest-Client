@@ -69,7 +69,7 @@ export default function BannerSlider() {
   };
 
   return (
-    <div className="relative w-full h-[500px] md:h-[500px] lg:h-[590px] rounded-2xl overflow-hidden shadow-2xl shadow-black bg-card">
+    <div className="relative w-full h-[500px] md:h-[500px] lg:h-[590px] rounded-2xl overflow-hidden bg-card">
       {slides.map((slide, i) => (
         <div
           key={i}
@@ -105,7 +105,7 @@ export default function BannerSlider() {
       ))}
 
       {/* SEARCH BAR */}
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 backdrop-blur-sm p-3 w-[95%] sm:w-[92%] md:w-[580px] rounded-xl shadow-2xl border border-border bg-background">
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 backdrop-blur-sm p-3 w-[95%] sm:w-[92%] md:w-[580px] rounded-xl border border-border bg-background">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 px-3 md:px-4">
 
           {/* LEFT TEXT */}
@@ -126,7 +126,7 @@ export default function BannerSlider() {
 
           {/* SEARCH INPUT */}
           <div className="w-full md:flex-1 flex justify-center md:justify-end">
-            <div className="flex items-center bg-input border border-border rounded-full overflow-hidden shadow-sm w-full md:w-[380px]">
+            <div className="flex items-center bg-input border border-border rounded-full overflow-hidden w-full md:w-[380px]">
               <input
                 ref={inputRef}
                 type="text"
