@@ -2,173 +2,166 @@
 
 import Image from "next/image";
 import { useState, useEffect, useRef } from "react";
-import { TbCurrentLocation } from "react-icons/tb";
+import { motion, AnimatePresence } from "framer-motion";
+import { TbTarget } from "react-icons/tb";
 import { useRouter } from "next/navigation";
 
-export default function BannerSlider() {
-  const slides = [
-    {
-      id: 1,
-      image: "/img1.jpeg",
-      title: "Come, live the new kind of living.",
-      subtitle: "Professionally managed spaces that feel like home.",
-    },
-    {
-      id: 2,
-      image: "/img2.jpeg",
-      title: "Zero brokerage. Zero hassle.",
-      subtitle: "Move in without paying a fortune upfront.",
-    },
-    {
-      id: 3,
-      image: "/img3.jpeg",
-      title: "Stay your way.",
-      subtitle: "Co-ed, girls-only or boys-only – the choice is yours.",
-    },
-    {
-      id: 4,
-      image: "/img4.jpeg",
-      title: "Closer to what matters.",
-      subtitle: "Live near your college or workplace and save time.",
-    },
-  ];
+const slides = [
+  {
+    id: 1,
+    image: "/img1.jpeg",
+    title: "Come, live the new kind of Living.",
+    subtitle: "Life at a professionally managed accommodation awaits you.",
+    placeholder: "locality",
+  },
+  {
+    id: 2,
+    image: "/img2.jpeg",
+    title: "You've got 99 problems, but brokerage ain't one.",
+    subtitle: "Move in without having to pay a fortune.",
+    placeholder: "office",
+  },
+  {
+    id: 3,
+    image: "/img3.jpeg",
+    title: "Multiple options. Zero judgements passed.",
+    subtitle: "Co-ed. Girls-only. Boys-only. All types of residences available.",
+    placeholder: "location",
+  },
+  {
+    id: 4,
+    image: "/img4.jpeg",
+    title: "Spend less time commuting and more hours unwinding.",
+    subtitle: "Live close to your college or workspace.",
+    placeholder: "office",
+  },
+];
 
+export default function ExactHeroSlider() {
   const [current, setCurrent] = useState(0);
-  const [word, setWord] = useState(0);
   const [searchText, setSearchText] = useState("");
-
-  const rotating = ["landmark", "location", "college", "office", "locality"];
-
   const router = useRouter();
-  const inputRef = useRef<HTMLInputElement | null>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
 
+  // Slide auto-play
   useEffect(() => {
-    const slideTimer = setInterval(() => {
-      setCurrent((p) => (p + 1) % slides.length);
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slides.length);
     }, 5000);
-    return () => clearInterval(slideTimer);
-  }, [slides.length]);
-
-  useEffect(() => {
-    const wordTimer = setInterval(() => {
-      setWord((p) => (p + 1) % rotating.length);
-    }, 1500);
-    return () => clearInterval(wordTimer);
+    return () => clearInterval(timer);
   }, []);
 
   const handleSearch = () => {
-    const query = searchText.trim();
-    if (!query) return;
-    router.push(`/listing?query=${encodeURIComponent(query)}`);
-  };
-
-  const handleWordClick = () => {
-    const value = rotating[word];
-    setSearchText(value);
-    inputRef.current?.focus();
+    if (!searchText.trim()) {
+      inputRef.current?.focus();
+      return;
+    }
+    router.push(`/listing?query=${encodeURIComponent(searchText)}`);
   };
 
   return (
-    <div className="relative w-full h-[500px] md:h-[500px] lg:h-[590px] rounded-2xl overflow-hidden bg-card">
-      {slides.map((slide, i) => (
-        <div
-          key={i}
-          className={`absolute inset-0 transition-opacity duration-700 ${current === i ? "opacity-100" : "opacity-0"
-            }`}
+    <section className="relative w-full h-[570px] bg-background text-foreground overflow-hidden font-sans">
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -20 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
+          className="absolute inset-0 flex flex-col lg:flex-row"
         >
-          <div className="flex h-full  ">
-            {/* LEFT TEXT */}
-            <div className="w-[40%] flex flex-col justify-center px-6 md:px-10 z-10">
-              <h1 className="text-foreground w-[190%] font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight">
-                {slide.title}
-              </h1>
 
-              <p className="text-muted-foreground w-[150%] mt-4 text-sm md:text-lg">
-                {slide.subtitle}
+          <div className="w-full lg:w-[50%] h-full flex flex-col justify-start mt-10 px-10 md:px-20 lg:px-24 z-20">
+            <div className="relative z-30 pointer-events-none">
+              <h1 className="text-foreground font-bold text-5xl md:text-7xl  leading-[1.05] tracking-tight w-full lg:w-[230%]">
+                {slides[current].title}
+              </h1>
+              <p className="mt-6 text-lg md:text-xl  max-w-md font-medium leading-relaxed">
+                {slides[current].subtitle}
               </p>
             </div>
+          </div>
 
-            {/* RIGHT IMAGE */}
-            <div className="relative w-[60%] h-[120%] lg:h-[112%]">
+
+          <div className="hidden lg:flex w-[50%] h-full pt-6 pr-6 pb-6">
+            <div className="relative w-full h-full lg:h-[120%] overflow-hidden ">
               <Image
-                src={slide.image}
+                src={slides[current].image}
                 alt="banner"
                 fill
                 className="object-cover"
+                priority
               />
             </div>
           </div>
 
-          {/* DARK GRADIENT OVERLAY */}
-          <div className="absolute inset-0 bg-linear-to-r from-card/80 via-card/40 to-transparent" />
-        </div>
-      ))}
 
-      {/* SEARCH BAR */}
-      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 backdrop-blur-sm p-3 w-[95%] sm:w-[92%] md:w-[580px] rounded-xl border border-border bg-background">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-4 px-3 md:px-4">
-
-          {/* LEFT TEXT */}
-          <div className="flex flex-col text-center md:text-left">
-            <p className="text-xs text-brand-gold">Find in and around...</p>
-
-            <div className="flex items-center justify-center md:justify-start gap-1 text-sm md:text-base text-foreground mt-1">
-              <span className="font-medium">Search</span>
-              <button
-                type="button"
-                onClick={handleWordClick}
-                className="font-semibold text-brand-gold transition-all duration-500"
-              >
-                {rotating[word]}
-              </button>
-            </div>
+          <div className="lg:hidden absolute inset-0 -z-10 opacity-20">
+            <Image src={slides[current].image} alt="banner" fill className="object-cover" />
           </div>
+        </motion.div>
+      </AnimatePresence>
 
-          {/* SEARCH INPUT */}
-          <div className="w-full md:flex-1 flex justify-center md:justify-end">
-            <div className="flex items-center bg-input border border-border rounded-full overflow-hidden w-full md:w-[380px]">
+
+      <div className="absolute bottom-12 bulr left-10 md:left-20 lg:left-24 z-40 w-[90%] md:w-[680px] ">
+        <div className=" rounded-2xl backdrop-blur-2xl shadow-[0_15px_50px_rgba(0,0,0,0.1)] p-3 md:p-4 flex items-center justify-between">
+          
+    
+          <div className="flex flex-col flex-1 pl-4">
+            <label htmlFor="hero-search" className="text-sm font-bold">
+              Find in and around...
+            </label>
+            <div className="flex items-center gap-1 text-sm">
+              <span className=" whitespace-nowrap">Search your</span>
               <input
+                id="hero-search"
                 ref={inputRef}
                 type="text"
                 value={searchText}
                 onChange={(e) => setSearchText(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()}
-                placeholder="Enter area, college, office..."
-                className="px-4 py-2 text-sm md:text-base outline-none flex-1 bg-transparent text-muted-foreground"
+                placeholder={slides[current].placeholder}
+                className="bg-transparent border-none outline-none text-[#66C2A9] font-semibold placeholder-[#66C2A9] w-full"
               />
-
-              <button
-                type="button"
-                className="px-1.5 h-full flex items-center justify-center border-l border-border hover:bg-muted transition"
-              >
-                <TbCurrentLocation className="text-lg md:text-xl text-muted-foreground" />
-              </button>
-
-              <button
-                type="button"
-                onClick={handleSearch}
-                className="px-2 md:px-5 py-2 bg-brand-gold text-white text-sm md:text-base font-medium h-full hover:bg-brand-gold-dark transition rounded-r-full"
-              >
-                Search
-              </button>
             </div>
           </div>
 
+          {/* Action Buttons */}
+          <div className="flex items-center gap-3">
+            <button 
+              onClick={() => inputRef.current?.focus()}
+              className="p-3 rounded-full  text-[#66C2A9] hover:bg-[#66C2A9]/20 transition active:scale-95"
+            >
+              <TbTarget size={24} />
+            </button>
+            <button 
+              onClick={handleSearch}
+              className="bg-[#66C2A9] hover:bg-[#58a892]  px-8 py-3 rounded-xl font-bold transition shadow-lg shadow-[#66C2A9]/20 active:scale-95"
+            >
+              Search
+            </button>
+          </div>
         </div>
       </div>
 
-
-      {/* DOTS */}
-      <div className="absolute bottom-4 w-full flex justify-center gap-3">
+      {/* NAVIGATION DOTS */}
+      <div className="absolute bottom-0 left-10 md:left-20 lg:left-24 flex items-center gap-4 z-40">
         {slides.map((_, i) => (
           <button
             key={i}
             onClick={() => setCurrent(i)}
-            className={`h-2.5 w-2.5 rounded-full cursor-pointer transition-all ${current === i ? "bg-brand-gold scale-125" : "bg-muted"
-              }`}
-          />
+            className="group relative flex items-center justify-center w-6 h-6"
+          >
+            {current === i ? (
+              <span className="w-5 h-5 rounded-full border-2 border-[#66C2A9] flex items-center justify-center transition-all">
+                <span className="w-2 h-2 rounded-full bg-[#66C2A9]" />
+              </span>
+            ) : (
+              <span className="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-gray-400 transition-all" />
+            )}
+          </button>
         ))}
       </div>
-    </div>
+    </section>
   );
 }
